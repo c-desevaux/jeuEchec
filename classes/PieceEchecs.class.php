@@ -80,6 +80,14 @@
             
         }
 
+        public function inGame(int $x, int $y): bool{
+            if($x > 1 && $x < 9 && $y > 1 && $y < 9 ){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
     }
 
 ?>

@@ -17,7 +17,19 @@
         echo "le fou ne peut pas aller en $testX, $testY";
     }
 
+    $testX = $testY = 40;
+    if($fou->canGO($testX, $testY)){
+        echo "le fou peut  aller en $testX, $testY";
+    }else{
+        echo "le fou ne peut pas aller en $testX, $testY";
+    }
 
+    $testX = $testY = 6;
+    if($fou->canGO($testX, $testY)){
+        echo "le fou peut  aller en $testX, $testY";
+    }else{
+        echo "le fou ne peut pas aller en $testX, $testY";
+    }
 
     try {
        

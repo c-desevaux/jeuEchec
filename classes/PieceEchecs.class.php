@@ -64,6 +64,8 @@
 
             if($x>0 && $x<9){
                 $this->x = $x;
+            }else{
+                echo "La valeur de X est hors échequier";
             }
             
         }
@@ -72,6 +74,8 @@
 
             if($y>0 && $y<9){
                 $this->y = $y;
+            }else{
+                echo "La valeur de Y est hors échequier";
             }
             
         }

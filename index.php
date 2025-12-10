@@ -4,6 +4,7 @@
     require_once 'classes/Cavalier.class.php';
     require_once 'classes/Fou.class.php';
     require_once 'classes/Roi.class.php';
+    require_once 'classes/Pion.class.php';
     require_once 'classes/PieceEchecs.class.php';
     require_once 'classes/InvalidArgumentPiece.class.php';
 
@@ -16,17 +17,17 @@
         for($y=1 ; $y < 9 ; $y++){
             $z = rand(0,1);
             if($z == 0){
-                $plate[$x][$y] = new Roi ($x, $y, PieceEchecs::WHITE);
+                $plate[$x][$y] = new Pion ($x, $y, PieceEchecs::WHITE);
                   
             }else{
-                $plate[$x][$y] = new Roi ($x, $y, PieceEchecs::BLACK);
+                $plate[$x][$y] = new Pion ($x, $y, PieceEchecs::WHITE);
             }
 
-            if($plate[$x][$y]->canGo(5,5)){
+            if($plate[$x][$y]->canGo(5,4)){
 
-                echo "Le " .get_class($plate[$x][$y])." situé en ".$x ." " .$y ." PEUT se déplacer sur la case 5, 5 <br>" ;  
+                echo "Le " .get_class($plate[$x][$y])."situé en ".$x ." " .$y ." PEUT se déplacer sur la case 5, 4 <br>" ;  
             }else{
-                echo "Le " .get_class($plate[$x][$y])." situé en ".$x ." " .$y ." NE peut PAS se déplacer sur la case 5, 5 <br>" ; 
+                echo "Le " .get_class($plate[$x][$y])." situé en ".$x ." " .$y ." NE peut PAS se déplacer sur la case 5, 4 <br>" ; 
             }
         }
     }

@@ -27,18 +27,7 @@
             
         }
 
-        public function canEat(PieceEchecs $piece): bool{
-
-            if($this->canGo($piece->getX(), $piece->getY()) && $this->getColor() != $piece-> getColor()){
-                
-                return true;           
-            }else{
-                return false;
-            }
-            
-
-
-        }
+        
     }
     
 

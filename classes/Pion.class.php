@@ -3,7 +3,7 @@
     class Pion extends PieceEchecs {
 
 
-        public function canGo($x, $y){
+        public function canGo($x, $y): bool{
 
             $x0 = $this->getX();
             $y0 = $this->getY();
@@ -27,6 +27,8 @@
                         }else{
                             return false;
                         }
+                    }else{
+                        return false;
                     }
                 }else{
                     return false;

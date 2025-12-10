@@ -2,7 +2,7 @@
 
     require_once 'InvalidArgumentPiece.class.php';
 
-    class PieceEchecs{
+    abstract class PieceEchecs{
 
         private $x;
         private $y;
@@ -82,6 +82,8 @@
             
         }
 
+        //Fonction autres
+
         public function inGame(int $x, int $y): bool{
             if($x > 1 && $x < 9 && $y > 1 && $y < 9 ){
                 return true;
@@ -89,6 +91,18 @@
                 return false;
             }
         }
+
+        public function canEat(PieceEchecs $piece): bool{
+
+            if($this->canGo($piece->getX(), $piece->getY()) && $this->getColor() != $piece-> getColor()){
+                
+                return true;           
+            }else{
+                return false;
+            }
+
+        }
+        public abstract function canGo($x, $y): bool;
 
     }
 

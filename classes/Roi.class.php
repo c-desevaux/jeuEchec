@@ -4,7 +4,7 @@ require_once 'classes/PieceEchecs.class.php';
 class Roi extends PieceEchecs {
 
 
-    public function canGo($x, $y){
+    public function canGo($x, $y): bool{
 
             $x0 = $this->getX();
             $y0 = $this->getY();
@@ -27,17 +27,7 @@ class Roi extends PieceEchecs {
     
     }
 
-    public function canEat(PieceEchecs $piece): bool{
-
-            if($this->canGo($piece->getX(), $piece->getY()) && $this->getColor() != $piece-> getColor()){
-                
-                return true;           
-            }else{
-                return false;
-            }
-
-
-    }
+   
 
 
 }

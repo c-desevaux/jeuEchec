@@ -1,6 +1,6 @@
 <?php
     require_once 'classes/PieceEchecs.class.php';
-    
+
     class Fou extends PieceEchecs{
 
         
@@ -28,10 +28,19 @@
            }else{
                 return false;
            }
-
-                
-           
             
+        }
+
+        public function canEat(PieceEchecs $piece): bool{
+
+            if($this->canGo($piece->getX(), $piece->getY()) && $this->getColor() != $piece-> getColor()){
+                
+                return true;           
+            }else{
+                return false;
+            }
+
+
         }
     }
     

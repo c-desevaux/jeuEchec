@@ -31,16 +31,42 @@
                 }else{
                     return false;
                 }
-                
-                
-                
+                   
            }else{
                 return false;
            }
     
-    }
+        }
+
+        public function canEat(PieceEchecs $piece): bool{
+
+            if($this->getColor() != $piece->getColor()){
+                if($piece->getColor()==PieceEchecs::WHITE){
+                    if($this->getY()+1 == $piece->getY() && ($this->getX()+1 == $piece->getX() || $this->getX()-1 == $piece->getX())){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                    
+                }else if($piece->getColor()==PieceEchecs::BLACK){
+                    if($this->getY()-1 == $piece->getY() && ($this->getX()+1 == $piece->getX() || $this->getX()-1 == $piece->getX())){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            }else{ 
+                return false;
+            }
+            
+            
 
 
-    }
+        }
+
+
+    } 
 
 ?>

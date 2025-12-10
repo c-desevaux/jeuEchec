@@ -19,6 +19,7 @@
     }else{
         echo "le pion1 en 2,2 Ne Peux Pas manger le pion2 ";
     }
+
     
 
 

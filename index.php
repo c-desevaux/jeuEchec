@@ -10,30 +10,16 @@
 
 
 
-    $plate=[];
+    $pion1 = new Pion (2,2, PieceEchecs::BLACK);
+    $pion2 = new Pion (2,1, PieceEchecs::WHITE);
+    
 
-    for($x=1 ; $x < 9 ; $x++){
-        $plate[$x]=[];
-        for($y=1 ; $y < 9 ; $y++){
-            $z = rand(0,1);
-            if($z == 0){
-                $plate[$x][$y] = new Pion ($x, $y, PieceEchecs::WHITE);
-                  
-            }else{
-                $plate[$x][$y] = new Pion ($x, $y, PieceEchecs::WHITE);
-            }
-
-            if($plate[$x][$y]->canGo(5,4)){
-
-                echo "Le " .get_class($plate[$x][$y])."situé en ".$x ." " .$y ." PEUT se déplacer sur la case 5, 4 <br>" ;  
-            }else{
-                echo "Le " .get_class($plate[$x][$y])." situé en ".$x ." " .$y ." NE peut PAS se déplacer sur la case 5, 4 <br>" ; 
-            }
-        }
+    if($pion1->canEat($pion2)){
+        echo "le pion1 en 2,2 peux manger le pion2 ";
+    }else{
+        echo "le pion1 en 2,2 Ne Peux Pas manger le pion2 ";
     }
-
-
-
+    
 
 
 

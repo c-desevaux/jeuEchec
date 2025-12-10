@@ -1,5 +1,6 @@
 <?php
-    require_once 'classes/Fou.class.php';
+    require_once 'classes/PieceEchecs.class.php';
+    
     class Fou extends PieceEchecs{
 
         
@@ -14,12 +15,16 @@
                 $dx = $x-$x0;
                 $dy = $y-$y0;
 
-
-                if( (abs($dx/$dy)) == 1){
-                    return true;
-                } else {
+                if($dy!=0){
+                    if( (abs($dx/$dy)) == 1){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }else{
                     return false;
-                }
+                } 
+                
            }else{
                 return false;
            }

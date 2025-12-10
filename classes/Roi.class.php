@@ -1,0 +1,33 @@
+<?php
+require_once 'classes/PieceEchecs.class.php';
+
+class Roi extends PieceEchecs {
+
+
+    public function canGo($x, $y){
+
+            $x0 = $this->getX();
+            $y0 = $this->getY();
+
+           if($this->inGame($x, $y) && ($x0 != $x || $y0 != $y)){
+                
+                $dx = abs($x-$x0);
+                $dy = abs($y-$y0);
+
+                if($dx<=1 && $dy<=1){
+                    return true;
+                }else{
+                    return false;
+                }
+                
+                
+           }else{
+                return false;
+           }
+    
+        }
+
+
+}
+
+?>

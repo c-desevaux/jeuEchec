@@ -7,6 +7,8 @@
         private $x;
         private $y;
         private $color;
+        public const WHITE = true;
+        public const BLACK = false;
 
 
 

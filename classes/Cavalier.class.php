@@ -12,11 +12,11 @@
 
             if($this->inGame($x, $y) && ($x0 != $x || $y0 != $y)){
                 
-                $dx = $x - $x0;
-                $dy = $y - $y0;
+                $dx = abs($x - $x0);
+                $dy = abs($y - $y0);
 
 
-                if((abs($dy)==2 && abs($dx)==1) || (abs($dx)==2 && abs($dy)==1)){
+                if(($dy==2 && $dx==1) || ($dx==2 && $dy==1)){
                     return true;
                 }else{
                     return false;

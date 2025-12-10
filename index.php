@@ -3,33 +3,43 @@
 
     require_once 'classes/Cavalier.class.php';
     require_once 'classes/Fou.class.php';
+    require_once 'classes/Roi.class.php';
     require_once 'classes/PieceEchecs.class.php';
     require_once 'classes/InvalidArgumentPiece.class.php';
 
-    $fou = new Fou(6, 6, true);
-    $cavalier = new Cavalier(6,6, true);
 
-    $testX = 5;
-    $testY=7;
-    if($fou->canGO($testX, $testY)){
-        echo "le fou peut  aller en $testX, $testY";
-    }else{
-        echo "le fou ne peut pas aller en $testX, $testY";
+
+    $plate=[];
+
+    for($x=1 ; $x < 9 ; $x++){
+        $plate[$x]=[];
+        for($y=1 ; $y < 9 ; $y++){
+            $z = rand(0,1);
+            if($z == 0){
+                $plate[$x][$y] = new Roi ($x, $y, PieceEchecs::WHITE);
+                  
+            }else{
+                $plate[$x][$y] = new Roi ($x, $y, PieceEchecs::BLACK);
+            }
+
+            if($plate[$x][$y]->canGo(5,5)){
+
+                echo "Le " .get_class($plate[$x][$y])." situé en ".$x ." " .$y ." PEUT se déplacer sur la case 5, 5 <br>" ;  
+            }else{
+                echo "Le " .get_class($plate[$x][$y])." situé en ".$x ." " .$y ." NE peut PAS se déplacer sur la case 5, 5 <br>" ; 
+            }
+        }
     }
 
-    $testX = $testY = 40;
-    if($fou->canGO($testX, $testY)){
-        echo "le fou peut  aller en $testX, $testY";
-    }else{
-        echo "le fou ne peut pas aller en $testX, $testY";
-    }
 
-    $testX = $testY = 6;
-    if($fou->canGO($testX, $testY)){
-        echo "le fou peut  aller en $testX, $testY";
-    }else{
-        echo "le fou ne peut pas aller en $testX, $testY";
-    }
+
+
+
+
+
+
+
+ //Jeu d'essai   
 
     try {
        

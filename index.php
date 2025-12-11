@@ -5,13 +5,18 @@
     require_once 'classes/Fou.class.php';
     require_once 'classes/Roi.class.php';
     require_once 'classes/Pion.class.php';
+    require_once 'classes/Tour.class.php';
+    require_once 'classes/Reine.class.php';
+    require_once 'classes/Echequier.class.php';
     require_once 'classes/PieceEchecs.class.php';
     require_once 'classes/InvalidArgumentPiece.class.php';
+
+    $piecesTab=[];
 
 
 
     $pion1 = new Pion (2,2, PieceEchecs::BLACK);
-    $pion2 = new Pion (2,1, PieceEchecs::WHITE);
+    $pion2 = new Pion (1,1, PieceEchecs::WHITE);
     
 
     if($pion1->canEat($pion2)){
